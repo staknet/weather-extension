@@ -1,0 +1,116 @@
+<!-- popup.html -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="clear">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 weather-card">
+        <!-- Left Panel -->
+        <div class="md:col-span-1">
+            <!-- Weather Description -->
+            <div class="flex items-center  weather-details-container">
+                <img id="weather-icon" class="w-16" src="https://openweathermap.org/img/wn/10d.png" />
+                <div class="weather-details">
+                    <div class="text-2xl" id="weather-main">Mostly clear</div>
+                    <!-- <div class="text-sm" id="weather-description">Pretty warm. Light breeze.</div> -->
+                </div>
+            </div>
+            <!-- Max and Min Temperature -->
+            <div class="flex items-center  ">
+                <div class="text-6xl font-light" id="temp">..°</div>
+                <div>
+                    <div class="text-sm" id="max-temp">Max: ..° <i class="fas fa-temperature-high"></i></div>
+                    <div class="text-sm" id="min-temp">Min: ..° <i class="fas fa-temperature-low"></i></div>
+                </div>
+            </div>
+            <!-- Current Temp, Feels Like, Humidity -->
+            <div class=" left-details">
+                <div class="text-2xl" id="current-temp">Current: ..°</div>
+                <div class="text-sm" id="precipitation">Precipitation: ..°</div>
+                <div class="text-sm" id="humidity">Humidity: ..%</div>
+            </div>
+            <!-- Sunrise, Sunset, UV Index -->
+            <div class=" left-details">
+                <div class="text-sm" id="sunrise">Sunrise: ..:.. <i class="fas fa-sun"></i></div>
+                <div class="text-sm" id="sunset">Sunset: ..:.. <i class="fas fa-moon"></i></div>
+                <div class="text-sm" id="uv-index">UV Index: ..</div>
+                <!-- <div class="text-sm" id="next-sunrise">Sun rises in 5 hrs 57 mins</div> -->
+            </div>
+        </div>
+        <!-- Right Panel -->
+        <div class="md:col-span-2">
+            <!-- Wind Direction and Speed, Visibility, AQI -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <div class="text-sm" id="wind-speed">Wind: 10 km/h NW <i class="fas fa-wind"></i></div>
+                <div class="text-sm" id="visibility">Visibility: 10 km <i class="fas fa-eye"></i></div>
+                <div class="text-sm" id="aqi">AQI: 45 <i class="fas fa-smog"></i></div>
+            </div>
+            <!-- City Name and Country -->
+            <div id="location" class="flex items-center justify-between mb-8">
+                <div>
+                    <div class="text-4xl font-semibold cursor-pointer" id="city-name">
+                        <span class="city-text">.....</span>
+                        <i class="fas fa-map-marker-alt" title="Click here for current location"></i>
+                        <span class="tooltip">City Name That Might Be Too Long</span> <!-- Tooltip -->
+                    </div>
+
+
+                    <div class="text-sm" id="country-name">......</div>
+                </div>
+
+                <div id="toggle-city-text" class="text-sm cursor-pointer underline">Select another city</div>
+
+                <div id="city-input" style="position: relative;">
+                    <input type="text" placeholder="Enter city name">
+                    <span id="enter-symbol-text"
+                        style="display: none; position: absolute; right: 10px; top: 10px; font-size: 12px; color: gray;">Press
+                        ↵</span>
+                    <div id="error-message"
+                        style="display: none; position: absolute; right: 10px; top: 30px; font-size: 12px; color: red;">
+                    </div> <!-- Error message display -->
+                </div>
+
+            </div>
+
+            <!-- Outlook Forecast -->
+            <div class="mt-8">
+                <div class="grid grid-cols-3 gap-4  overflow-x-auto">
+                    <div class="text-center forecast" id="forecast-1">
+                        <img id="weather-icon1" class="w-16" />
+                        <div id="dt1">Day</div>
+                        <div id="morning1">Morning: --°</div>
+                        <div id="afternoon1">Afternoon: --°</div>
+                        <div id="evening1">Evening: --°</div>
+                    </div>
+                    <div class="text-center forecast" id="forecast-2">
+                        <img id="weather-icon2" class="w-16" />
+                        <div id="dt2">Day</div>
+                        <div id="morning2">Morning: --°</div>
+                        <div id="afternoon2">Afternoon: --°</div>
+                        <div id="evening2">Evening: --°</div>
+                    </div>
+                    <div class="text-center forecast" id="forecast-3">
+                        <img id="weather-icon3" class="w-16" />
+                        <div id="dt3">Day</div>
+                        <div id="morning3">Morning: --°</div>
+                        <div id="afternoon3">Afternoon: --°</div>
+                        <div id="evening3">Evening: --°</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loading-spinner"></div>
+    <div id="error-message"></div>
+    <script type="module" src="popup.js"></script>
+</body>
+
+</html>

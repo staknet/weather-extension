@@ -1,0 +1,399 @@
+body {
+  font-family: Arial, sans-serif;
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://i.pinimg.com/564x/70/e8/36/70e83672b792b811b2e8ef9ac220200f.jpg');
+  color: white;
+  min-width: 800px;
+  max-width: 800px;
+  margin: 1 auto;
+  height: 360px;
+  padding: 0;
+  line-height: 1.3rem;
+  background-size: cover;
+  transition: background 0.5s ease, background-image 0.5s ease;
+}
+
+html {
+  width: 800px;
+  height: 380px;
+}
+
+.weather-card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  overflow: auto;
+}
+
+/* Background based on weather conditions */
+.clear {
+  background-color: #87CEFA;
+  background-image: url('https://i.pinimg.com/564x/61/84/a6/6184a6ba524ce150ca2ee645eb4cf1a4.jpg');
+}
+
+.clouds {
+  background-color: #B0C4DE;
+  background-image: url('https://i.pinimg.com/originals/ee/07/fb/ee07fba366c00dfad0442584759cf02a.jpg');
+}
+
+.rain {
+  background-color: #4682B4;
+  background-image: url('https://i.pinimg.com/564x/f9/c0/f0/f9c0f0cb6aa2ed0f366e8ddef6f76cf9.jpg');
+}
+
+.snow {
+  background-color: #FFFFFF;
+  background-image: url('https://i.pinimg.com/736x/9b/a0/e6/9ba0e69b2c5cd646f86eccb977f2f372.jpg');
+}
+
+.default {
+  background-color: #f9f9f9;
+  background-image: none;
+}
+
+.weather-details {
+  margin-bottom: 10px;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.p-8 {
+  padding: 1rem;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.transform {
+  transform: translateY(-50%);
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.space-y-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.md\:grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gap-8 {
+  gap: 1rem;
+}
+
+.md\:col-span-1 {
+  grid-column: span 1;
+}
+
+.md\:col-span-2 {
+  grid-column: span 2;
+}
+
+.flex.items-center {
+  align-items: center;
+}
+
+.weather-details-container {
+  margin-bottom: 1rem;
+}
+
+.text-4xl {
+  font-size: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+.space-x-4> :not([hidden])~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem* var(--tw-space-x-reverse));
+  margin-left: calc(1rem* calc(1 - var(--tw-space-x-reverse)));
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+}
+
+.left-details {
+  margin-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-gray-800 {
+  background-color: #2f2f2f;
+}
+
+.text-white {
+  color: white;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+#city-input {
+  display: none;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+#city-input input {
+  background-color: #e6f0ff;
+  border: 1px solid #b0c4de;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+#city-input input:focus {
+  border-color: #4682b4;
+  background-color: #f0f8ff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.forecast {
+  background: rgb(0 0 0 / 30%);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  margin-right: 5px;
+}
+
+.forecast:hover {
+  transform: translateY(-5px);
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -30px;
+  /* Adjust this depending on the icon's position */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -30px;
+  /* Adjust this depending on the icon's position */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Loading spinner styling */
+#loading-spinner {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid #f3f3f3;
+  /* Light grey */
+  border-top: 6px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#city-input {
+  position: relative;
+  /* Make sure this div is positioned relative for absolute positioning of child elements */
+}
+
+#enter-symbol-text {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 12px;
+  color: gray;
+  /* Change color as needed */
+}
+
+#error-message {
+  display: none;
+  /* Hidden by default */
+  position: absolute;
+  right: 10px;
+  top: 30px;
+  /* Adjust this as needed to fit below the enter symbol */
+  font-size: 12px;
+  color: red;
+  /* Set to red */
+}
+
+#city-name {
+  display: flex;
+  /* Use flex to align items */
+  align-items: center;
+  /* Center items vertically */
+  max-width: 200px;
+  /* Adjust as necessary */
+  overflow: hidden;
+  /* Hide overflow for the text */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  text-overflow: ellipsis;
+  /* Add ellipsis for overflow text */
+  position: relative;
+  /* For positioning the tooltip */
+}
+
+.city-text {
+  overflow: hidden;
+  /* Hide overflow for the text */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  text-overflow: ellipsis;
+  /* Add ellipsis for overflow text */
+  flex-grow: 1;
+  /* Allow the text to take available space */
+}
+
+#city-name i {
+  margin-left: 8px;
+  /* Add space between city name and the icon */
+  flex-shrink: 0;
+  /* Prevent the icon from shrinking */
+  white-space: nowrap;
+  /* Prevent icon from wrapping */
+}
+
+/* Tooltip styling */
+.tooltip {
+  display: none;
+  /* Hidden by default */
+  position: absolute;
+  /* Position it relative to the city name */
+  background-color: rgba(0, 0, 0, 0.75);
+  /* Black background with transparency */
+  color: #fff;
+  /* White text */
+  padding: 5px;
+  /* Padding for the tooltip */
+  border-radius: 4px;
+  /* Rounded corners */
+  top: 100%;
+  /* Position below the city name */
+  left: 0;
+  /* Align with the left side */
+  z-index: 10;
+  /* Make sure it’s above other elements */
+  white-space: nowrap;
+  /* Prevent tooltip text from wrapping */
+}
+
+/* Show tooltip on hover */
+#city-name:hover .tooltip {
+  display: block;
+  /* Show the tooltip */
+}
+
+.w-16 {
+  width: 55px;
+}

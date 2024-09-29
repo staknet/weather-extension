@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+.weather-app {
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+#city-input {
+    padding: 5px;
+}
+
+#weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+#temp,
+#description,
+#wind-speed,
+#humidity,
+#sunrise,
+#sunset,
+#aqi {
+    margin: 10px 0;
+}
