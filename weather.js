@@ -34,7 +34,6 @@ function updateWeatherUI(data) {
     const uvIndex = data.current.uv; // UV index
     const visibility = data.current.vis_km; // Visibility in km
     const cityName = data.location.name; // City name
-    const region = data.location.region; // Region or state
     const country = data.location.country; // Country
     const precipitation = data.current.precip_mm; // Precipitation in millimeters
 
@@ -48,6 +47,8 @@ function updateWeatherUI(data) {
     document.getElementById('visibility').innerHTML = `Visibility: ${visibility} km <i class="fas fa-eye"></i>`;
     document.getElementById('precipitation').innerText = `Precipitation: ${precipitation} mm`;
     document.getElementById('weather-icon').src = iconCode; // Weather icon
+    document.getElementById('country-name').innerHTML = `Country: ${country}`;
+
 }
 // Function to update the background based on weather condition
 const updateBackground = (weatherCondition) => {
