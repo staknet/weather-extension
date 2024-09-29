@@ -47,7 +47,7 @@ function updateWeatherUI(data) {
     document.getElementById('visibility').innerHTML = `Visibility: ${visibility} km <i class="fas fa-eye"></i>`;
     document.getElementById('precipitation').innerText = `Precipitation: ${precipitation} mm`;
     document.getElementById('weather-icon').src = iconCode; // Weather icon
-    document.getElementById('country-name').innerHTML = `Country: ${country}`;
+    document.getElementById('country-name').innerHTML = `${country}`;
 
 }
 // Function to update the background based on weather condition
