@@ -37,7 +37,7 @@ function updateWeatherUI(data) {
     const country = data.location.country; // Country
     const precipitation = data.current.precip_mm; // Precipitation in millimeters
 
-    document.getElementById('city-name').innerHTML = `${cityName}<i class="fas fa-map-marker-alt"></i>`;
+    document.getElementById('city-name').innerHTML = `${cityName}  <i class="fas fa-map-marker-alt"></i>`;
     document.getElementById('weather-main').innerHTML = weatherMain;
     document.getElementById('temp').innerHTML = `${temp}°`;
     document.getElementById('current-temp').innerHTML = `Feels like: ${feelsLike}°C`;
